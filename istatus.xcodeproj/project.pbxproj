@@ -11,6 +11,8 @@
 		76493597257839CE002360CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76493596257839CE002360CA /* ContentView.swift */; };
 		76493599257839CF002360CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76493598257839CF002360CA /* Assets.xcassets */; };
 		7649359C257839CF002360CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7649359B257839CF002360CA /* Preview Assets.xcassets */; };
+		764935A625784523002360CA /* HostTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935A525784523002360CA /* HostTask.swift */; };
+		764935A9257846F5002360CA /* HostTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935A8257846F5002360CA /* HostTasks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		76493598257839CF002360CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7649359B257839CF002360CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7649359D257839CF002360CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		764935A525784523002360CA /* HostTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTask.swift; sourceTree = "<group>"; };
+		764935A8257846F5002360CA /* HostTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTasks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				76493598257839CF002360CA /* Assets.xcassets */,
 				7649359D257839CF002360CA /* Info.plist */,
 				7649359A257839CF002360CA /* Preview Content */,
+				764935A525784523002360CA /* HostTask.swift */,
+				764935A8257846F5002360CA /* HostTasks.swift */,
 			);
 			path = istatus;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76493597257839CE002360CA /* ContentView.swift in Sources */,
+				764935A625784523002360CA /* HostTask.swift in Sources */,
+				764935A9257846F5002360CA /* HostTasks.swift in Sources */,
 				76493595257839CE002360CA /* istatusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
