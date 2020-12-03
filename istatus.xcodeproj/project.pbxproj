@@ -13,6 +13,9 @@
 		7649359C257839CF002360CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7649359B257839CF002360CA /* Preview Assets.xcassets */; };
 		764935A625784523002360CA /* HostTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935A525784523002360CA /* HostTask.swift */; };
 		764935A9257846F5002360CA /* HostTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935A8257846F5002360CA /* HostTasks.swift */; };
+		764935AC25784831002360CA /* HostTaskCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935AB25784831002360CA /* HostTaskCreateView.swift */; };
+		764935AF25784861002360CA /* HostTaskCreateViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935AE25784861002360CA /* HostTaskCreateViewSupport.swift */; };
+		764935B225784A13002360CA /* TextEntryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935B125784A13002360CA /* TextEntryModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		7649359D257839CF002360CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		764935A525784523002360CA /* HostTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTask.swift; sourceTree = "<group>"; };
 		764935A8257846F5002360CA /* HostTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTasks.swift; sourceTree = "<group>"; };
+		764935AB25784831002360CA /* HostTaskCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTaskCreateView.swift; sourceTree = "<group>"; };
+		764935AE25784861002360CA /* HostTaskCreateViewSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTaskCreateViewSupport.swift; sourceTree = "<group>"; };
+		764935B125784A13002360CA /* TextEntryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				7649359A257839CF002360CA /* Preview Content */,
 				764935A525784523002360CA /* HostTask.swift */,
 				764935A8257846F5002360CA /* HostTasks.swift */,
+				764935AB25784831002360CA /* HostTaskCreateView.swift */,
+				764935AE25784861002360CA /* HostTaskCreateViewSupport.swift */,
+				764935B125784A13002360CA /* TextEntryModifier.swift */,
 			);
 			path = istatus;
 			sourceTree = "<group>";
@@ -144,6 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				764935AC25784831002360CA /* HostTaskCreateView.swift in Sources */,
+				764935B225784A13002360CA /* TextEntryModifier.swift in Sources */,
+				764935AF25784861002360CA /* HostTaskCreateViewSupport.swift in Sources */,
 				76493597257839CE002360CA /* ContentView.swift in Sources */,
 				764935A625784523002360CA /* HostTask.swift in Sources */,
 				764935A9257846F5002360CA /* HostTasks.swift in Sources */,
@@ -275,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"istatus/Preview Content\"";
 				DEVELOPMENT_TEAM = 3NHG8TKA58;
@@ -285,8 +298,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlwhitehurst.istatus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlwhitehurst.virtualyou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"istatus/Preview Content\"";
 				DEVELOPMENT_TEAM = 3NHG8TKA58;
@@ -307,8 +322,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlwhitehurst.istatus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlwhitehurst.virtualyou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
