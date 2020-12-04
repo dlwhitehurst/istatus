@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HostTaskCreateView {
     @StateObject private var support = HostTaskCreateViewSupport()
-    @ObservedObject var hostTasks = HostTasks()
+    //@ObservedObject var hostTasks = HostTasks()
+    @Environment(\.managedObjectContext) private var viewContext
 }
 
 extension HostTaskCreateView {
@@ -64,15 +65,25 @@ extension HostTaskCreateView: View {
                 Button("Add"){
                 
                     // create a HostTask
-                    let task: HostTask = HostTask(
-                        proto: support.proto,
-                        hostname: support.hostname,
-                        port: support.port,
-                        path: support.path,
-                        task: "http2xx")
+                    let task = HostTask(context: viewContext)
+                    task.date = Date()
+                    task.proto = support.proto
+                    task.hostname = support.hostname
+                    task.port = support.port
+                    task.path = support.path
+                    task.task = "http2xx"
 
                     // add to collection
-                    hostTasks.add(task)
+                    //hostTasks.add(task)
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        // Replace this implementation with code to handle the error appropriately.
+                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                        let nsError = error as NSError
+                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    }
+
                     
                     // create url to also show below
                     support.url = build()

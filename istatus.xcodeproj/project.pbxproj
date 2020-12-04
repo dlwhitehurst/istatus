@@ -11,11 +11,17 @@
 		76493597257839CE002360CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76493596257839CE002360CA /* ContentView.swift */; };
 		76493599257839CF002360CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76493598257839CF002360CA /* Assets.xcassets */; };
 		7649359C257839CF002360CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7649359B257839CF002360CA /* Preview Assets.xcassets */; };
-		764935A625784523002360CA /* HostTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935A525784523002360CA /* HostTask.swift */; };
-		764935A9257846F5002360CA /* HostTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935A8257846F5002360CA /* HostTasks.swift */; };
 		764935AC25784831002360CA /* HostTaskCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935AB25784831002360CA /* HostTaskCreateView.swift */; };
 		764935AF25784861002360CA /* HostTaskCreateViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935AE25784861002360CA /* HostTaskCreateViewSupport.swift */; };
 		764935B225784A13002360CA /* TextEntryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764935B125784A13002360CA /* TextEntryModifier.swift */; };
+		765351B725799A08009255B2 /* persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765351B625799A08009255B2 /* persistence.swift */; };
+		765351BA25799BD3009255B2 /* VpnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765351B925799BD3009255B2 /* VpnView.swift */; };
+		765351BD25799C4C009255B2 /* DashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765351BC25799C4C009255B2 /* DashView.swift */; };
+		765351C225799EC8009255B2 /* HostTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765351C125799EC8009255B2 /* HostTasksView.swift */; };
+		765351CE2579A26A009255B2 /* istatus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 765351CC2579A26A009255B2 /* istatus.xcdatamodeld */; };
+		7699F0162579BE5D006EA928 /* HostTaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699F0152579BE5D006EA928 /* HostTaskDetailView.swift */; };
+		7699F0192579BEB7006EA928 /* LabelTextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */; };
+		7699F01C2579BF13006EA928 /* DetailTextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699F01B2579BF13006EA928 /* DetailTextDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,11 +31,17 @@
 		76493598257839CF002360CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7649359B257839CF002360CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7649359D257839CF002360CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		764935A525784523002360CA /* HostTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTask.swift; sourceTree = "<group>"; };
-		764935A8257846F5002360CA /* HostTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTasks.swift; sourceTree = "<group>"; };
 		764935AB25784831002360CA /* HostTaskCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTaskCreateView.swift; sourceTree = "<group>"; };
 		764935AE25784861002360CA /* HostTaskCreateViewSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTaskCreateViewSupport.swift; sourceTree = "<group>"; };
 		764935B125784A13002360CA /* TextEntryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryModifier.swift; sourceTree = "<group>"; };
+		765351B625799A08009255B2 /* persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = persistence.swift; sourceTree = "<group>"; };
+		765351B925799BD3009255B2 /* VpnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VpnView.swift; sourceTree = "<group>"; };
+		765351BC25799C4C009255B2 /* DashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashView.swift; sourceTree = "<group>"; };
+		765351C125799EC8009255B2 /* HostTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTasksView.swift; sourceTree = "<group>"; };
+		765351CD2579A26A009255B2 /* istatus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = istatus.xcdatamodel; sourceTree = "<group>"; };
+		7699F0152579BE5D006EA928 /* HostTaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTaskDetailView.swift; sourceTree = "<group>"; };
+		7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextDisplay.swift; sourceTree = "<group>"; };
+		7699F01B2579BF13006EA928 /* DetailTextDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +76,20 @@
 			children = (
 				76493594257839CE002360CA /* istatusApp.swift */,
 				76493596257839CE002360CA /* ContentView.swift */,
-				76493598257839CF002360CA /* Assets.xcassets */,
-				7649359D257839CF002360CA /* Info.plist */,
-				7649359A257839CF002360CA /* Preview Content */,
-				764935A525784523002360CA /* HostTask.swift */,
-				764935A8257846F5002360CA /* HostTasks.swift */,
+				765351BC25799C4C009255B2 /* DashView.swift */,
+				7699F01B2579BF13006EA928 /* DetailTextDisplay.swift */,
 				764935AB25784831002360CA /* HostTaskCreateView.swift */,
 				764935AE25784861002360CA /* HostTaskCreateViewSupport.swift */,
+				7699F0152579BE5D006EA928 /* HostTaskDetailView.swift */,
+				765351C125799EC8009255B2 /* HostTasksView.swift */,
+				7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */,
+				765351B625799A08009255B2 /* persistence.swift */,
 				764935B125784A13002360CA /* TextEntryModifier.swift */,
+				765351B925799BD3009255B2 /* VpnView.swift */,
+				76493598257839CF002360CA /* Assets.xcassets */,
+				7649359D257839CF002360CA /* Info.plist */,
+				765351CC2579A26A009255B2 /* istatus.xcdatamodeld */,
+				7649359A257839CF002360CA /* Preview Content */,
 			);
 			path = istatus;
 			sourceTree = "<group>";
@@ -153,12 +171,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765351C225799EC8009255B2 /* HostTasksView.swift in Sources */,
+				765351BD25799C4C009255B2 /* DashView.swift in Sources */,
+				765351BA25799BD3009255B2 /* VpnView.swift in Sources */,
 				764935AC25784831002360CA /* HostTaskCreateView.swift in Sources */,
+				765351B725799A08009255B2 /* persistence.swift in Sources */,
 				764935B225784A13002360CA /* TextEntryModifier.swift in Sources */,
+				765351CE2579A26A009255B2 /* istatus.xcdatamodeld in Sources */,
 				764935AF25784861002360CA /* HostTaskCreateViewSupport.swift in Sources */,
 				76493597257839CE002360CA /* ContentView.swift in Sources */,
-				764935A625784523002360CA /* HostTask.swift in Sources */,
-				764935A9257846F5002360CA /* HostTasks.swift in Sources */,
+				7699F01C2579BF13006EA928 /* DetailTextDisplay.swift in Sources */,
+				7699F0192579BEB7006EA928 /* LabelTextDisplay.swift in Sources */,
+				7699F0162579BE5D006EA928 /* HostTaskDetailView.swift in Sources */,
 				76493595257839CE002360CA /* istatusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +376,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		765351CC2579A26A009255B2 /* istatus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				765351CD2579A26A009255B2 /* istatus.xcdatamodel */,
+			);
+			currentVersion = 765351CD2579A26A009255B2 /* istatus.xcdatamodel */;
+			path = istatus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 76493589257839CE002360CA /* Project object */;
 }
