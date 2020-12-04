@@ -9,14 +9,16 @@ import SwiftUI
 
 class HostTaskCreateViewSupport: ObservableObject {
 
-  @Published var proto: String =    ""
-  @Published var hostname: String = ""
-  @Published var port: String =     ""
-  @Published var path: String =     ""
-  @Published var url: String =      ""
+    // textfield entry
+    @Published var proto: String =    ""
+    @Published var hostname: String = ""
+    @Published var port: String =     ""
+    @Published var path: String =     ""
+    @Published var url: String =      ""
    
-  @Published var done: Bool =   true
-  @Published var add: Bool =    false
+    // button enable/disable
+    @Published var done: Bool =   true
+    @Published var add: Bool =    false
 
 }
 

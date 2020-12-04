@@ -8,51 +8,44 @@
 import SwiftUI
 
 struct HostTaskDetailView {
-    //let model: HostModel
+    let task: HostTask
 }
 
 extension HostTaskDetailView: View {
     var body: some View {
-        Text("HostTaskDetailView")
-        /*
+        //Text("HostTaskDetailView")
+        
         VStack {
             HStack(alignment: .center) {
-                LabelTextDisplay(value: "Id")
-                DetailTextDisplay(value: "abc")
-                Spacer()
-            }
-            .padding(.horizontal)
-
-            HStack(alignment: .center) {
                 LabelTextDisplay(value: "Protocol")
-                DetailTextDisplay(value: "abc")
+                DetailTextDisplay(value: task.proto!)
                 Spacer()
             }
             .padding(.horizontal)
             
             HStack {
                 LabelTextDisplay(value: "Host")
-                DetailTextDisplay(value: "abc")
+                DetailTextDisplay(value: task.hostname!)
                 Spacer()
             }
             .padding(.horizontal)
             
             HStack {
                 LabelTextDisplay(value: "Port")
-                DetailTextDisplay(value: "abc")
+                DetailTextDisplay(value: task.port!)
                 Spacer()
             }
             .padding(.horizontal)
             
             HStack {
                 LabelTextDisplay(value: "Path")
-                DetailTextDisplay(value: "abc")
+                DetailTextDisplay(value: task.path!)
                 Spacer()
             }
             .padding(.horizontal)
             HStack {
                 LabelTextDisplay(value: "Task")
-                DetailTextDisplay(value: "abc")
+                DetailTextDisplay(value: task.task!)
                 Spacer()
             }
             .padding(.horizontal)
@@ -71,14 +64,14 @@ extension HostTaskDetailView: View {
             Spacer()
         }
         .padding(.bottom)
-     */
+     
 
     }
 }
 
 struct HostTaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HostTaskDetailView()
+        HostTaskDetailView(task: HostTask()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 
