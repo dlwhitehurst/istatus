@@ -21,6 +21,12 @@ extension HostTaskCreateView {
 extension HostTaskCreateView: View {
     var body: some View {
         VStack(spacing:0) {
+            Text("Host Task")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.bottom)
+            CheckTaskPicker()
+                .padding(.bottom)
             HStack {
                 Text("Protocol")
                     .fontWeight(.heavy)
@@ -58,8 +64,6 @@ extension HostTaskCreateView: View {
                     .modifier(TextEntryModifier())
             }
             .padding(.vertical)
-            //CheckTaskPicker()
-               // .padding(.top)
             HStack {
                 Button("Add"){
                 

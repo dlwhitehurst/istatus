@@ -20,7 +20,7 @@ struct ContentView: View {
                              systemImage: "tray.full")
             }
             HostTaskCreateView()
-            .tabItem { Label("Setup",
+            .tabItem { Label("Create",
                                  systemImage: "tray.and.arrow.down")
             }
             VpnView()
