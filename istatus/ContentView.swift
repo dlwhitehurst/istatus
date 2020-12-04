@@ -6,12 +6,28 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     var body: some View {
-        HostTaskCreateView()
-        //Text("Hello, David!")
-            //.padding()
+        TabView {
+            DashView()
+            .tabItem { Label("Dashboards",
+                             systemImage: "rectangle.stack.fill.badge.person.crop")
+            }
+            HostTasksView()
+            .tabItem { Label("Tasks",
+                             systemImage: "tray.full")
+            }
+            HostTaskCreateView()
+            .tabItem { Label("Setup",
+                                 systemImage: "tray.and.arrow.down")
+            }
+            VpnView()
+            .tabItem { Label("VPN",
+                                 systemImage: "network")
+            }
+        }
     }
 }
 
