@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HostTaskCreateView {
     @StateObject private var support = HostTaskCreateViewSupport()
-    //@ObservedObject var hostTasks = HostTasks()
     @Environment(\.managedObjectContext) private var viewContext
 }
 
@@ -73,8 +72,6 @@ extension HostTaskCreateView: View {
                     task.path = support.path
                     task.task = "http2xx"
 
-                    // add to collection
-                    //hostTasks.add(task)
                     do {
                         try viewContext.save()
                     } catch {

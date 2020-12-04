@@ -76,15 +76,16 @@
 			children = (
 				76493594257839CE002360CA /* istatusApp.swift */,
 				76493596257839CE002360CA /* ContentView.swift */,
-				765351BC25799C4C009255B2 /* DashView.swift */,
 				7699F01B2579BF13006EA928 /* DetailTextDisplay.swift */,
+				7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */,
+				766A43732579E1E900CFEC1A /* modifier */,
+				766A43752579E24B00CFEC1A /* support */,
+				766A43742579E22B00CFEC1A /* view */,
+				765351BC25799C4C009255B2 /* DashView.swift */,
 				764935AB25784831002360CA /* HostTaskCreateView.swift */,
-				764935AE25784861002360CA /* HostTaskCreateViewSupport.swift */,
 				7699F0152579BE5D006EA928 /* HostTaskDetailView.swift */,
 				765351C125799EC8009255B2 /* HostTasksView.swift */,
-				7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */,
 				765351B625799A08009255B2 /* persistence.swift */,
-				764935B125784A13002360CA /* TextEntryModifier.swift */,
 				765351B925799BD3009255B2 /* VpnView.swift */,
 				76493598257839CF002360CA /* Assets.xcassets */,
 				7649359D257839CF002360CA /* Info.plist */,
@@ -100,6 +101,29 @@
 				7649359B257839CF002360CA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		766A43732579E1E900CFEC1A /* modifier */ = {
+			isa = PBXGroup;
+			children = (
+				764935B125784A13002360CA /* TextEntryModifier.swift */,
+			);
+			path = modifier;
+			sourceTree = "<group>";
+		};
+		766A43742579E22B00CFEC1A /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		766A43752579E24B00CFEC1A /* support */ = {
+			isa = PBXGroup;
+			children = (
+				764935AE25784861002360CA /* HostTaskCreateViewSupport.swift */,
+			);
+			path = support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
