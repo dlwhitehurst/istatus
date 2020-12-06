@@ -12,14 +12,14 @@ struct ContentView: View {
     var body: some View {
         TabView {
             DashView()
-            .tabItem { Label("Dashboards",
-                             systemImage: "rectangle.stack.fill.badge.person.crop")
+            .tabItem { Label("Dashboard",
+                             systemImage: "square.grid.3x3.fill")
             }
-            HostTasksView()
-            .tabItem { Label("Tasks",
+            MonitorsView()
+            .tabItem { Label("Monitors",
                              systemImage: "tray.full")
             }
-            HostTaskCreateView()
+            MonitorCreateView()
             .tabItem { Label("Create",
                                  systemImage: "tray.and.arrow.down")
             }

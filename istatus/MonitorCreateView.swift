@@ -1,5 +1,5 @@
 //
-//  HostTaskCreateView.swift
+//  MonitorCreateView.swift
 //  istatus
 //
 //  Created by David Whitehurst on 12/2/20.
@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-struct HostTaskCreateView {
-    @StateObject private var support = HostTaskCreateViewSupport()
+struct MonitorCreateView {
+    @StateObject private var support = MonitorCreateViewSupport()
     @Environment(\.managedObjectContext) private var viewContext
 }
 
-extension HostTaskCreateView {
+extension MonitorCreateView {
     func build() -> String {
         return support.proto + "://" + support.hostname + ":" + support.port + "/" + support.path
     }
 }
 
-extension HostTaskCreateView: View {
+extension MonitorCreateView: View {
     var body: some View {
         VStack(spacing:0) {
-            Text("Host Task")
+            Text("Monitor")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.bottom)
@@ -68,13 +68,13 @@ extension HostTaskCreateView: View {
                 Button("Add"){
                 
                     // create a HostTask
-                    let task = HostTask(context: viewContext)
-                    task.date = Date()
-                    task.proto = support.proto
-                    task.hostname = support.hostname
-                    task.port = support.port
-                    task.path = support.path
-                    task.task = "http2xx"
+                    let monitor = Monitor(context: viewContext)
+                    monitor.date = Date()
+                    monitor.proto = support.proto
+                    monitor.hostname = support.hostname
+                    monitor.port = support.port
+                    monitor.path = support.path
+                    monitor.task = "http2xx"
 
                     do {
                         try viewContext.save()
@@ -119,8 +119,8 @@ extension HostTaskCreateView: View {
     }
 }
 
-struct HostTaskCreateView_Previews: PreviewProvider {
+struct MonitorCreateView_Previews: PreviewProvider {
     static var previews: some View {
-        HostTaskCreateView()
+        MonitorCreateView()
     }
 }

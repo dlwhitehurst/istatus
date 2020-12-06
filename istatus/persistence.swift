@@ -15,13 +15,13 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newTask = HostTask(context: viewContext)
-            newTask.date = Date()
-            newTask.proto = "http"
-            newTask.hostname = "localhost"
-            newTask.port = "8080"
-            newTask.path = "wordpress"
-            newTask.task = "http2xx"
+            let newMonitor = Monitor(context: viewContext)
+            newMonitor.date = Date()
+            newMonitor.proto = "http"
+            newMonitor.hostname = "localhost"
+            newMonitor.port = "8080"
+            newMonitor.path = "wordpress"
+            newMonitor.task = "http2xx"
         }
         do {
             try viewContext.save()
