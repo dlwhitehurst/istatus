@@ -10,7 +10,11 @@ import SwiftUI
 struct MonitorCreateView {
     @StateObject private var support = MonitorCreateViewSupport()
     @Environment(\.managedObjectContext) private var viewContext
+    private var tasks = ["http-status", "http-content", "jdbc-connect", "telnet-port", "cron-status", "file-exists"]
+    @State var selectedTask = 0
+
 }
+
 
 extension MonitorCreateView {
     func build() -> String {
@@ -25,8 +29,17 @@ extension MonitorCreateView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.bottom)
-            CheckTaskPicker()
-                .padding(.bottom)
+
+            //CheckTaskPicker() - later how to pass selected value?
+            Picker(selection: $selectedTask, label: Text("Please choose a Task")) {
+                ForEach(0 ..< tasks.count) {
+                    Text(self.tasks[$0])
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .frame(width: 600, height: 30)
+            .padding(.bottom)
+
             HStack {
                 Text("Protocol")
                     .fontWeight(.heavy)
@@ -74,7 +87,7 @@ extension MonitorCreateView: View {
                     monitor.hostname = support.hostname
                     monitor.port = support.port
                     monitor.path = support.path
-                    monitor.task = "http2xx"
+                    monitor.task = tasks[selectedTask]
 
                     do {
                         try viewContext.save()

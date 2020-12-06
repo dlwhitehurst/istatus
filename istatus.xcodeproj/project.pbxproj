@@ -19,7 +19,6 @@
 		765351BD25799C4C009255B2 /* DashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765351BC25799C4C009255B2 /* DashView.swift */; };
 		765351C225799EC8009255B2 /* MonitorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765351C125799EC8009255B2 /* MonitorsView.swift */; };
 		765351CE2579A26A009255B2 /* istatus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 765351CC2579A26A009255B2 /* istatus.xcdatamodeld */; };
-		766A43802579F23D00CFEC1A /* CheckTaskPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A437F2579F23D00CFEC1A /* CheckTaskPicker.swift */; };
 		7699F0162579BE5D006EA928 /* MonitorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699F0152579BE5D006EA928 /* MonitorDetailView.swift */; };
 		7699F0192579BEB7006EA928 /* LabelTextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */; };
 		7699F01C2579BF13006EA928 /* DetailTextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699F01B2579BF13006EA928 /* DetailTextDisplay.swift */; };
@@ -40,7 +39,6 @@
 		765351BC25799C4C009255B2 /* DashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashView.swift; sourceTree = "<group>"; };
 		765351C125799EC8009255B2 /* MonitorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorsView.swift; sourceTree = "<group>"; };
 		765351CD2579A26A009255B2 /* istatus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = istatus.xcdatamodel; sourceTree = "<group>"; };
-		766A437F2579F23D00CFEC1A /* CheckTaskPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskPicker.swift; sourceTree = "<group>"; };
 		7699F0152579BE5D006EA928 /* MonitorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorDetailView.swift; sourceTree = "<group>"; };
 		7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextDisplay.swift; sourceTree = "<group>"; };
 		7699F01B2579BF13006EA928 /* DetailTextDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextDisplay.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 				7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */,
 				766A43732579E1E900CFEC1A /* modifier */,
 				766A43752579E24B00CFEC1A /* support */,
-				766A43742579E22B00CFEC1A /* view */,
 				765351BC25799C4C009255B2 /* DashView.swift */,
 				764935AB25784831002360CA /* MonitorCreateView.swift */,
 				7699F0152579BE5D006EA928 /* MonitorDetailView.swift */,
@@ -93,7 +90,6 @@
 				7649359D257839CF002360CA /* Info.plist */,
 				765351CC2579A26A009255B2 /* istatus.xcdatamodeld */,
 				7649359A257839CF002360CA /* Preview Content */,
-				766A437F2579F23D00CFEC1A /* CheckTaskPicker.swift */,
 			);
 			path = istatus;
 			sourceTree = "<group>";
@@ -112,13 +108,6 @@
 				764935B125784A13002360CA /* TextEntryModifier.swift */,
 			);
 			path = modifier;
-			sourceTree = "<group>";
-		};
-		766A43742579E22B00CFEC1A /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		766A43752579E24B00CFEC1A /* support */ = {
@@ -209,7 +198,6 @@
 				76493597257839CE002360CA /* ContentView.swift in Sources */,
 				7699F01C2579BF13006EA928 /* DetailTextDisplay.swift in Sources */,
 				7699F0192579BEB7006EA928 /* LabelTextDisplay.swift in Sources */,
-				766A43802579F23D00CFEC1A /* CheckTaskPicker.swift in Sources */,
 				7699F0162579BE5D006EA928 /* MonitorDetailView.swift in Sources */,
 				76493595257839CE002360CA /* istatusApp.swift in Sources */,
 			);
