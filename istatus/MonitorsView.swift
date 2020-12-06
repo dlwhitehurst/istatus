@@ -39,10 +39,10 @@ extension MonitorsView: View {
                     NavigationLink(destination:
                                     MonitorDetailView(monitor: monitor)
                                     .navigationBarTitle(Text(monitor.hostname!))){
-                        HStack {
+                        //HStack {
                             Text(monitor.hostname!)
-                            Text(monitor.task!)
-                        }
+                            //Text(monitor.task!)
+                        //}
                     }
                 }
                 .onDelete(perform: remove)

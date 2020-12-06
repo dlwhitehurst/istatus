@@ -15,6 +15,8 @@ class MonitorCreateViewSupport: ObservableObject {
     @Published var port: String =     ""
     @Published var path: String =     ""
     @Published var url: String =      ""
+    
+    //@Published var task: String =     ""
    
     // button enable/disable
     @Published var done: Bool =   true
