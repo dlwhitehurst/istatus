@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class HostTaskCreateViewSupport: ObservableObject {
+class MonitorCreateViewSupport: ObservableObject {
 
     // textfield entry
     @Published var proto: String =    ""
@@ -22,7 +22,7 @@ class HostTaskCreateViewSupport: ObservableObject {
 
 }
 
-extension HostTaskCreateViewSupport {
+extension MonitorCreateViewSupport {
     
     var protoPrompt: String {
         "Protocol"

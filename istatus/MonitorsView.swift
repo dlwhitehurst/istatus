@@ -1,5 +1,5 @@
 //
-//  HostTasksView.swift
+//  MonitorsView.swift
 //  istatus
 //
 //  Created by David Whitehurst on 12/3/20.
@@ -8,17 +8,17 @@
 import SwiftUI
 import CoreData
 
-struct HostTasksView {
+struct MonitorsView {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: HostTask.entity(), sortDescriptors:
-                    [NSSortDescriptor(keyPath: \HostTask.date, ascending: true)])
-    var tasks: FetchedResults<HostTask>
+    @FetchRequest(entity: Monitor.entity(), sortDescriptors:
+                    [NSSortDescriptor(keyPath: \Monitor.date, ascending: true)])
+    var monitors: FetchedResults<Monitor>
 }
 
-extension HostTasksView {
+extension MonitorsView {
     func remove(_ indexSet: IndexSet) {
-        // remove all tasks
-        indexSet.map { tasks[$0] }.forEach(viewContext.delete)
+        // remove all monitors
+        indexSet.map { monitors[$0] }.forEach(viewContext.delete)
 
         do {
             try viewContext.save()
@@ -31,30 +31,30 @@ extension HostTasksView {
     }
 }
 
-extension HostTasksView: View {
+extension MonitorsView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(tasks, id: \.self) { (task: HostTask) in
+                ForEach(monitors, id: \.self) { (monitor: Monitor) in
                     NavigationLink(destination:
-                                    HostTaskDetailView(task: task)
-                                    .navigationBarTitle(Text(task.hostname!))){
+                                    MonitorDetailView(monitor: monitor)
+                                    .navigationBarTitle(Text(monitor.hostname!))){
                         HStack {
-                            Text(task.hostname!)
-                            Text(task.task!)
+                            Text(monitor.hostname!)
+                            Text(monitor.task!)
                         }
                     }
                 }
                 .onDelete(perform: remove)
             }
-            .navigationBarTitle("Host Tasks")
+            .navigationBarTitle("Monitors")
             .navigationBarItems(trailing: EditButton())
         }
     }
 }
 
-struct HostTasksView_Previews: PreviewProvider {
+struct MonitorsView_Previews: PreviewProvider {
     static var previews: some View {
-        HostTasksView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        MonitorsView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  HostTaskDetailView.swift
+//  MonitorDetailView.swift
 //  InfraCheck
 //
 //  Created by David Whitehurst on 11/28/20.
@@ -7,51 +7,43 @@
 
 import SwiftUI
 
-struct HostTaskDetailView {
-    let task: HostTask
+struct MonitorDetailView {
+    let monitor: Monitor
 }
 
-extension HostTaskDetailView: View {
+extension MonitorDetailView: View {
     var body: some View {
-        //Text("HostTaskDetailView")
-        
         VStack {
             HStack(alignment: .center) {
                 LabelTextDisplay(value: "Protocol")
-                DetailTextDisplay(value: task.proto!)
+                DetailTextDisplay(value: monitor.proto!)
                 Spacer()
             }
             .padding(.horizontal)
             
             HStack {
                 LabelTextDisplay(value: "Host")
-                DetailTextDisplay(value: task.hostname!)
+                DetailTextDisplay(value: monitor.hostname!)
                 Spacer()
             }
             .padding(.horizontal)
             
             HStack {
                 LabelTextDisplay(value: "Port")
-                DetailTextDisplay(value: task.port!)
+                DetailTextDisplay(value: monitor.port!)
                 Spacer()
             }
             .padding(.horizontal)
             
             HStack {
                 LabelTextDisplay(value: "Path")
-                DetailTextDisplay(value: task.path!)
+                DetailTextDisplay(value: monitor.path!)
                 Spacer()
             }
             .padding(.horizontal)
             HStack {
                 LabelTextDisplay(value: "Task")
-                DetailTextDisplay(value: task.task!)
-                Spacer()
-            }
-            .padding(.horizontal)
-            HStack {
-                LabelTextDisplay(value: "Status")
-                DetailTextDisplay(value: "abc")
+                DetailTextDisplay(value: monitor.task!)
                 Spacer()
             }
             .padding(.horizontal)
@@ -69,9 +61,9 @@ extension HostTaskDetailView: View {
     }
 }
 
-struct HostTaskDetailView_Previews: PreviewProvider {
+struct MonitorDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HostTaskDetailView(task: HostTask()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        MonitorDetailView(monitor: Monitor()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 
