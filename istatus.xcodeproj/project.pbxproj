@@ -22,6 +22,10 @@
 		7699F0162579BE5D006EA928 /* MonitorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699F0152579BE5D006EA928 /* MonitorDetailView.swift */; };
 		7699F0192579BEB7006EA928 /* LabelTextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */; };
 		7699F01C2579BF13006EA928 /* DetailTextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699F01B2579BF13006EA928 /* DetailTextDisplay.swift */; };
+		D102708F257D86130049F90C /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D102708E257D86130049F90C /* GridStack.swift */; };
+		D1027092257DB6E80049F90C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1027091257DB6E80049F90C /* Enums.swift */; };
+		D1027095257DB78A0049F90C /* StatusButtonGreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1027094257DB78A0049F90C /* StatusButtonGreen.swift */; };
+		D10270A0257DBD970049F90C /* StatusButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D102709F257DBD970049F90C /* StatusButtonRed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		7699F0152579BE5D006EA928 /* MonitorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorDetailView.swift; sourceTree = "<group>"; };
 		7699F0182579BEB7006EA928 /* LabelTextDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextDisplay.swift; sourceTree = "<group>"; };
 		7699F01B2579BF13006EA928 /* DetailTextDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextDisplay.swift; sourceTree = "<group>"; };
+		D102708E257D86130049F90C /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		D1027091257DB6E80049F90C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		D1027094257DB78A0049F90C /* StatusButtonGreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusButtonGreen.swift; sourceTree = "<group>"; };
+		D102709F257DBD970049F90C /* StatusButtonRed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusButtonRed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,10 @@
 				7649359D257839CF002360CA /* Info.plist */,
 				765351CC2579A26A009255B2 /* istatus.xcdatamodeld */,
 				7649359A257839CF002360CA /* Preview Content */,
+				D102708E257D86130049F90C /* GridStack.swift */,
+				D1027091257DB6E80049F90C /* Enums.swift */,
+				D1027094257DB78A0049F90C /* StatusButtonGreen.swift */,
+				D102709F257DBD970049F90C /* StatusButtonRed.swift */,
 			);
 			path = istatus;
 			sourceTree = "<group>";
@@ -191,13 +203,17 @@
 				765351BD25799C4C009255B2 /* DashView.swift in Sources */,
 				765351BA25799BD3009255B2 /* VpnView.swift in Sources */,
 				764935AC25784831002360CA /* MonitorCreateView.swift in Sources */,
+				D102708F257D86130049F90C /* GridStack.swift in Sources */,
 				765351B725799A08009255B2 /* persistence.swift in Sources */,
 				764935B225784A13002360CA /* TextEntryModifier.swift in Sources */,
 				765351CE2579A26A009255B2 /* istatus.xcdatamodeld in Sources */,
+				D10270A0257DBD970049F90C /* StatusButtonRed.swift in Sources */,
 				764935AF25784861002360CA /* MonitorCreateViewSupport.swift in Sources */,
 				76493597257839CE002360CA /* ContentView.swift in Sources */,
 				7699F01C2579BF13006EA928 /* DetailTextDisplay.swift in Sources */,
+				D1027092257DB6E80049F90C /* Enums.swift in Sources */,
 				7699F0192579BEB7006EA928 /* LabelTextDisplay.swift in Sources */,
+				D1027095257DB78A0049F90C /* StatusButtonGreen.swift in Sources */,
 				7699F0162579BE5D006EA928 /* MonitorDetailView.swift in Sources */,
 				76493595257839CE002360CA /* istatusApp.swift in Sources */,
 			);
