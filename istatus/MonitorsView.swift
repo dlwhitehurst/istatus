@@ -41,7 +41,6 @@ extension MonitorsView: View {
                                     .navigationBarTitle(Text(monitor.hostname!))){
                         //HStack {
                             Text(monitor.hostname!)
-                            //Text(monitor.task!)
                         //}
                     }
                 }

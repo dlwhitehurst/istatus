@@ -17,9 +17,33 @@ struct MonitorCreateView {
 
 
 extension MonitorCreateView {
+    // url builder
     func build() -> String {
         return support.proto + "://" + support.hostname + ":" + support.port + "/" + support.path
     }
+    
+    // Create and persist a Monitor entity using Core-Data and viewContext
+    func createMonitor() {
+        let monitor = Monitor(context: viewContext)
+        monitor.date = Date()
+        monitor.proto = support.proto
+        monitor.hostname = support.hostname
+        monitor.port = support.port
+        monitor.path = support.path
+        monitor.task = tasks[selectedTask]
+        monitor.url = build()
+        monitor.status = false
+
+        // save
+        do {
+            try viewContext.save()
+        } catch {
+            // replace with UI error handling (fatalError dev only)
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
 }
 
 extension MonitorCreateView: View {
@@ -30,7 +54,6 @@ extension MonitorCreateView: View {
                 .fontWeight(.bold)
                 .padding(.bottom)
 
-            //CheckTaskPicker() - later how to pass selected value?
             Picker(selection: $selectedTask, label: Text("Please choose a Task")) {
                 ForEach(0 ..< tasks.count) {
                     Text(self.tasks[$0])
@@ -79,25 +102,8 @@ extension MonitorCreateView: View {
             .padding(.vertical)
             HStack {
                 Button("Add"){
-                
-                    // create a HostTask
-                    let monitor = Monitor(context: viewContext)
-                    monitor.date = Date()
-                    monitor.proto = support.proto
-                    monitor.hostname = support.hostname
-                    monitor.port = support.port
-                    monitor.path = support.path
-                    monitor.task = tasks[selectedTask]
-
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        // Replace this implementation with code to handle the error appropriately.
-                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                        let nsError = error as NSError
-                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                    }
-
+                    // create monitor and event
+                    createMonitor()
                     
                     // create url to also show below
                     support.url = build()

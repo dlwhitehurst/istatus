@@ -7,28 +7,16 @@
 
 import SwiftUI
 
-struct MonitorEvent : Hashable{
-    let date = Date()
-    let status: Bool
-    let task: String
-    let uri: String
-    let host: String
-}
-
 struct DashView {
-    var events: Array<MonitorEvent> = []
-    init() {
-        // create MonitorEvent
-        let event1: MonitorEvent = MonitorEvent(status: true, task: "http-status", uri: "http://localhost:8080/admin/login", host: "localhost")
-        let event2: MonitorEvent = MonitorEvent(status: true, task: "http-status", uri: "http://localhost:8081/health", host: "192.168.1.3")
-        let event3: MonitorEvent = MonitorEvent(status: false, task: "http-status", uri: "http://localhost:8080/contacts", host: "127.0.0.1")
-
-        events.append(event1)
-        events.append(event2)
-        events.append(event3)
-    }
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Monitor.entity(), sortDescriptors:
+                    [NSSortDescriptor(keyPath: \Monitor.date, ascending: true)])
+    var monitors: FetchedResults<Monitor>
 }
 
+extension DashView {
+    
+}
 extension DashView: View {
     var body: some View {
         VStack {
@@ -46,17 +34,17 @@ extension DashView: View {
             }
 */
             HStack {
-                ForEach(events, id: \.self) { event in
-                    if event.status {
+                ForEach(monitors, id: \.self) { monitor in
+                    if monitor.status {
                         Button(action: {
                             print("under construction")
                         }) {
                             VStack {
-                                Text(event.host)
+                                Text(monitor.hostname!)
                                     .padding(.top)
                                     .padding(.horizontal, 10)
                                     .font(.title)
-                                Text(event.task)
+                                Text(monitor.task!)
                                     .font(.caption)
                                     .padding(.bottom)
                              }
@@ -70,11 +58,10 @@ extension DashView: View {
                             print("under construction")
                         }) {
                             VStack {
-                                Text(event.host)
-                                    .padding(.top)
+                                Text(monitor.hostname!)                                  .padding(.top)
                                     .padding(.horizontal, 10)
                                     .font(.title)
-                                Text(event.task)
+                                Text(monitor.task!)
                                     .font(.caption)
                                     .padding(.bottom)
                              }
@@ -89,7 +76,9 @@ extension DashView: View {
             }
             .padding(.bottom)
             
-            Button(action: {}) {
+            Button(action: {
+                print("Hello")
+            }) {
                 Text("Refresh")
             }
             .padding()
