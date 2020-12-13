@@ -7,26 +7,18 @@
 
 import SwiftUI
 
-struct MonitorEvent : Hashable{
-    let date = Date()
-    let status: Bool
-    let task: String
-    let uri: String
-    let host: String
+struct DashView {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Monitor.entity(), sortDescriptors:
+                    [NSSortDescriptor(keyPath: \Monitor.date, ascending: true)])
+    var monitors: FetchedResults<Monitor>
+    @State private var showingAlert1 = false
+    @State private var showingAlert2 = false
+
 }
 
-struct DashView {
-    var events: Array<MonitorEvent> = []
-    init() {
-        // create MonitorEvent
-        let event1: MonitorEvent = MonitorEvent(status: true, task: "http-status", uri: "http://localhost:8080/admin/login", host: "localhost")
-        let event2: MonitorEvent = MonitorEvent(status: true, task: "http-status", uri: "http://localhost:8081/health", host: "192.168.1.3")
-        let event3: MonitorEvent = MonitorEvent(status: false, task: "http-status", uri: "http://localhost:8080/contacts", host: "127.0.0.1")
-
-        events.append(event1)
-        events.append(event2)
-        events.append(event3)
-    }
+extension DashView {
+    
 }
 
 extension DashView: View {
@@ -37,7 +29,6 @@ extension DashView: View {
             .padding()
 /*
             GridStack(rows: 4, columns: 4) { row, col in
-                
                 if (row == 2 && col == 2) {
                     StatusButtonRed()
                 } else {
@@ -46,17 +37,17 @@ extension DashView: View {
             }
 */
             HStack {
-                ForEach(events, id: \.self) { event in
-                    if event.status {
+                ForEach(monitors, id: \.self) { monitor in
+                    if monitor.status {
                         Button(action: {
-                            print("under construction")
+                            self.showingAlert1 = true
                         }) {
                             VStack {
-                                Text(event.host)
+                                Text(monitor.hostname!)
                                     .padding(.top)
                                     .padding(.horizontal, 10)
                                     .font(.title)
-                                Text(event.task)
+                                Text(monitor.task!)
                                     .font(.caption)
                                     .padding(.bottom)
                              }
@@ -64,17 +55,19 @@ extension DashView: View {
                              .foregroundColor(Color.white)
                         }
                         .cornerRadius(20)
-
+                        .alert(isPresented: $showingAlert1) {
+                        Alert(title: Text("Operation Detail"), message:
+                                Text("Success: Resource returns 200...2xx status"), dismissButton: .default(Text("Cancel")))
+                        }
                     } else {
                         Button(action: {
-                            print("under construction")
+                            self.showingAlert2 = true
                         }) {
                             VStack {
-                                Text(event.host)
-                                    .padding(.top)
+                                Text(monitor.hostname!)                                  .padding(.top)
                                     .padding(.horizontal, 10)
                                     .font(.title)
-                                Text(event.task)
+                                Text(monitor.task!)
                                     .font(.caption)
                                     .padding(.bottom)
                              }
@@ -82,14 +75,18 @@ extension DashView: View {
                              .foregroundColor(Color.white)
                         }
                         .cornerRadius(20)
-
+                        .alert(isPresented: $showingAlert2) {
+                        Alert(title: Text("Operation Detail"), message:
+                                Text("Failure: Resource unavailable or not returning 200...2xx"), dismissButton: .default(Text("Cancel")))
+                        }
                     }
-
                 }
             }
             .padding(.bottom)
             
-            Button(action: {}) {
+            Button(action: {
+                Runner(monitors: monitors, viewContext: viewContext).run()
+            }) {
                 Text("Refresh")
             }
             .padding()

@@ -9,10 +9,13 @@
         <attribute name="path" optional="YES" attributeType="String"/>
         <attribute name="port" optional="YES" attributeType="String"/>
         <attribute name="proto" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="statusmsg" optional="YES" attributeType="String"/>
         <attribute name="task" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Monitor" positionX="-54" positionY="0" width="128" height="133"/>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="Monitor" positionX="-54" positionY="0" width="128" height="178"/>
     </elements>
 </model>

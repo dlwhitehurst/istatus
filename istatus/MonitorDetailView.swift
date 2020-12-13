@@ -8,7 +8,27 @@
 import SwiftUI
 
 struct MonitorDetailView {
+    @Environment(\.managedObjectContext) private var viewContext
     let monitor: Monitor
+}
+
+extension MonitorDetailView {
+
+    private func updateMonitorGreen(monitor: Monitor) {
+        let newStatus = true
+        viewContext.performAndWait {
+            monitor.status = newStatus
+            try? viewContext.save()
+        }
+    }
+
+    private func updateMonitorRed(monitor: Monitor) {
+        let newStatus = false
+        viewContext.performAndWait {
+            monitor.status = newStatus
+            try? viewContext.save()
+        }
+    }
 }
 
 extension MonitorDetailView: View {
@@ -41,16 +61,48 @@ extension MonitorDetailView: View {
                 Spacer()
             }
             .padding(.horizontal)
+
             HStack {
                 LabelTextDisplay(value: "Task")
                 DetailTextDisplay(value: monitor.task!)
                 Spacer()
             }
             .padding(.horizontal)
-            
-            // Test Button
-            Button("Test") {
-                print("Test")
+
+            HStack {
+                LabelTextDisplay(value: "URL")
+                DetailTextDisplay(value: monitor.url!)
+                Spacer()
+            }
+            .padding(.horizontal)
+
+            HStack {
+                LabelTextDisplay(value: "Status")
+                DetailTextDisplay(value: monitor.status.description)
+                Spacer()
+            }
+            .padding(.horizontal)
+
+            HStack {
+                LabelTextDisplay(value: "Status Message")
+                DetailTextDisplay(value: monitor.statusmsg ?? "FATAL: Status message is nil")
+                Spacer()
+            }
+            .padding(.horizontal)
+
+            HStack {
+                Button("Set Green") {
+                    updateMonitorGreen(monitor: monitor)
+                }
+                .padding()
+                Button("Set Red") {
+                    updateMonitorRed(monitor: monitor)
+                }
+                .padding()
+                Button("Monitor") {
+                    MonitorOperation(monitor: monitor, viewContext: viewContext).start()
+                }
+                .padding()
             }
 
             Spacer()
