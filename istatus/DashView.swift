@@ -12,78 +12,23 @@ struct DashView {
     @FetchRequest(entity: Monitor.entity(), sortDescriptors:
                     [NSSortDescriptor(keyPath: \Monitor.date, ascending: true)])
     var monitors: FetchedResults<Monitor>
-    @State private var showingAlert1 = false
-    @State private var showingAlert2 = false
-
-}
-
-extension DashView {
-    
 }
 
 extension DashView: View {
     var body: some View {
         VStack {
+            // Heading
             Text("iStatus Monitor Events")
             .font(.largeTitle)
             .padding()
-/*
-            GridStack(rows: 4, columns: 4) { row, col in
-                if (row == 2 && col == 2) {
-                    StatusButtonRed()
-                } else {
-                StatusButtonGreen()
-                }
-            }
-*/
-            HStack {
-                ForEach(monitors, id: \.self) { monitor in
-                    if monitor.status {
-                        Button(action: {
-                            self.showingAlert1 = true
-                        }) {
-                            VStack {
-                                Text(monitor.hostname!)
-                                    .padding(.top)
-                                    .padding(.horizontal, 10)
-                                    .font(.title)
-                                Text(monitor.task!)
-                                    .font(.caption)
-                                    .padding(.bottom)
-                             }
-                             .background(Color.green)
-                             .foregroundColor(Color.white)
-                        }
-                        .cornerRadius(20)
-                        .alert(isPresented: $showingAlert1) {
-                        Alert(title: Text("Operation Detail"), message:
-                                Text("Success: Resource returns 200...2xx status"), dismissButton: .default(Text("Cancel")))
-                        }
-                    } else {
-                        Button(action: {
-                            self.showingAlert2 = true
-                        }) {
-                            VStack {
-                                Text(monitor.hostname!)                                  .padding(.top)
-                                    .padding(.horizontal, 10)
-                                    .font(.title)
-                                Text(monitor.task!)
-                                    .font(.caption)
-                                    .padding(.bottom)
-                             }
-                             .background(Color.red)
-                             .foregroundColor(Color.white)
-                        }
-                        .cornerRadius(20)
-                        .alert(isPresented: $showingAlert2) {
-                        Alert(title: Text("Operation Detail"), message:
-                                Text("Failure: Resource unavailable or not returning 200...2xx"), dismissButton: .default(Text("Cancel")))
-                        }
-                    }
-                }
+            
+            // Special Stack
+            GeometryReader { geometry in
+                self.generateContent(in: geometry)
             }
             .padding(.bottom)
             
+            // Refresh Button
             Button(action: {
                 Runner(monitors: monitors, viewContext: viewContext).run()
             }) {
@@ -91,9 +36,71 @@ extension DashView: View {
             }
             .padding()
             
+            // Alignment spacer
             Spacer()
         }
     }
+
+    private func generateContent(in g: GeometryProxy) -> some View {
+        var width = CGFloat.zero
+        var height = CGFloat.zero
+
+        return ZStack(alignment: .topLeading) {
+            ForEach(self.monitors, id: \.self) { monitor in
+                self.item(for: monitor)
+                    .padding([.horizontal, .vertical], 4)
+                    .alignmentGuide(.leading, computeValue: { d in
+                        if (abs(width - d.width) > g.size.width)
+                        {
+                            width = 0
+                            height -= d.height
+                        }
+                        let result = width
+                        if monitor == self.monitors.last! {
+                            width = 0 //last item
+                        } else {
+                            width -= d.width
+                        }
+                        return result
+                    })
+                    .alignmentGuide(.top, computeValue: {d in
+                        let result = height
+                        if monitor == self.monitors.last! {
+                            height = 0 // last item
+                        }
+                        return result
+                    })
+            }
+        }
+    }
+    
+    func getColor(monitor: Monitor) -> Color {
+        if (monitor.status) {
+            return Color.green
+        } else {
+            return Color.red
+        }
+    }
+    
+    func item(for monitor: Monitor) -> some View {
+        Button(action: {
+            print("Button clicked")
+        }) {
+            VStack {
+                Text(monitor.hostname!)
+                    .padding(.top)
+                    .padding(.horizontal, 10)
+                    .font(.title)
+                Text(monitor.task!)
+                    .font(.caption)
+                    .padding(.bottom)
+              }
+              .background(getColor(monitor: monitor))
+              .foregroundColor(Color.white)
+            }
+            .cornerRadius(20)
+    }
+
 }
 
 struct DashView_Previews: PreviewProvider {
