@@ -55,10 +55,10 @@ final class MonitorOperation: AsyncOperation {
                 self.updateMonitorRed(monitor: self.monitor, statusMsg: "Server Error: was not status 200...299")
                 return
             }
-            print("before finish")
+            //print("before finish")
             self.finish()
             self.updateMonitorGreen(monitor: self.monitor, statusMsg: "Success! Resource returned 2xx status!")
-            print("after finish")
+            print("monitor operation finished")
         }
         monitorTask!.resume()
     }
