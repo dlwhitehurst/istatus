@@ -16,39 +16,19 @@ extension MonitorDetailView {
 
     private func updateMonitorGreen(monitor: Monitor) {
         let newStatus = true
-            viewContext.performAndWait {
-                monitor.status = newStatus
-                try? viewContext.save()
-            }
+        viewContext.performAndWait {
+            monitor.status = newStatus
+            try? viewContext.save()
+        }
     }
 
     private func updateMonitorRed(monitor: Monitor) {
         let newStatus = false
-            viewContext.performAndWait {
-                monitor.status = newStatus
-                try? viewContext.save()
-            }
-    }
-
-    func successCheck(monitor: Monitor) {
-        let url = URL(string: monitor.url!)!
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-        
-            if error != nil || data == nil {
-                print("Client error!")
-                return
-            }
-
-            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("Server error!")
-                return
-            }
-            
-            print("Success here ...")
+        viewContext.performAndWait {
+            monitor.status = newStatus
+            try? viewContext.save()
         }
-        task.resume()
     }
-
 }
 
 extension MonitorDetailView: View {
@@ -103,10 +83,26 @@ extension MonitorDetailView: View {
             }
             .padding(.horizontal)
 
-            // Test Button
-            Button("Test") {
-                updateMonitorGreen(monitor: monitor)
-                //successCheck(monitor: monitor)
+            HStack {
+                LabelTextDisplay(value: "Status Message")
+                DetailTextDisplay(value: monitor.statusmsg ?? "FATAL: Status message is nil")
+                Spacer()
+            }
+            .padding(.horizontal)
+
+            HStack {
+                Button("Set Green") {
+                    updateMonitorGreen(monitor: monitor)
+                }
+                .padding()
+                Button("Set Red") {
+                    updateMonitorRed(monitor: monitor)
+                }
+                .padding()
+                Button("Monitor") {
+                    MonitorOperation(monitor: monitor, viewContext: viewContext).start()
+                }
+                .padding()
             }
 
             Spacer()

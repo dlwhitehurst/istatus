@@ -26,6 +26,9 @@
 		D1027095257DB78A0049F90C /* StatusButtonGreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1027094257DB78A0049F90C /* StatusButtonGreen.swift */; };
 		D10270A0257DBD970049F90C /* StatusButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D102709F257DBD970049F90C /* StatusButtonRed.swift */; };
 		D1570A0C25846D2D00D80966 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1570A0B25846D2D00D80966 /* PersistenceManager.swift */; };
+		D1570A16258497A800D80966 /* AsynchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1570A15258497A800D80966 /* AsynchOperation.swift */; };
+		D1570A19258498EE00D80966 /* MonitorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1570A18258498EE00D80966 /* MonitorOperation.swift */; };
+		D1570A222585B12C00D80966 /* RunnerOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1570A212585B12C00D80966 /* RunnerOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		D1027094257DB78A0049F90C /* StatusButtonGreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusButtonGreen.swift; sourceTree = "<group>"; };
 		D102709F257DBD970049F90C /* StatusButtonRed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusButtonRed.swift; sourceTree = "<group>"; };
 		D1570A0B25846D2D00D80966 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		D1570A15258497A800D80966 /* AsynchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchOperation.swift; sourceTree = "<group>"; };
+		D1570A18258498EE00D80966 /* MonitorOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorOperation.swift; sourceTree = "<group>"; };
+		D1570A212585B12C00D80966 /* RunnerOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				7649359D257839CF002360CA /* Info.plist */,
 				765351CC2579A26A009255B2 /* istatus.xcdatamodeld */,
 				7649359A257839CF002360CA /* Preview Content */,
+				D1570A15258497A800D80966 /* AsynchOperation.swift */,
+				D1570A18258498EE00D80966 /* MonitorOperation.swift */,
+				D1570A212585B12C00D80966 /* RunnerOperation.swift */,
 			);
 			path = istatus;
 			sourceTree = "<group>";
@@ -210,12 +219,15 @@
 				D10270A0257DBD970049F90C /* StatusButtonRed.swift in Sources */,
 				764935AF25784861002360CA /* MonitorCreateViewSupport.swift in Sources */,
 				76493597257839CE002360CA /* ContentView.swift in Sources */,
+				D1570A16258497A800D80966 /* AsynchOperation.swift in Sources */,
 				7699F01C2579BF13006EA928 /* DetailTextDisplay.swift in Sources */,
 				7699F0192579BEB7006EA928 /* LabelTextDisplay.swift in Sources */,
 				D1027095257DB78A0049F90C /* StatusButtonGreen.swift in Sources */,
+				D1570A222585B12C00D80966 /* RunnerOperation.swift in Sources */,
 				D1570A0C25846D2D00D80966 /* PersistenceManager.swift in Sources */,
 				7699F0162579BE5D006EA928 /* MonitorDetailView.swift in Sources */,
 				76493595257839CE002360CA /* istatusApp.swift in Sources */,
+				D1570A19258498EE00D80966 /* MonitorOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +361,7 @@
 				DEVELOPMENT_TEAM = 3NHG8TKA58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = istatus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,7 +385,7 @@
 				DEVELOPMENT_TEAM = 3NHG8TKA58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = istatus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

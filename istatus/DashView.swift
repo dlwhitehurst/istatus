@@ -12,11 +12,15 @@ struct DashView {
     @FetchRequest(entity: Monitor.entity(), sortDescriptors:
                     [NSSortDescriptor(keyPath: \Monitor.date, ascending: true)])
     var monitors: FetchedResults<Monitor>
+    @State private var showingAlert1 = false
+    @State private var showingAlert2 = false
+
 }
 
 extension DashView {
     
 }
+
 extension DashView: View {
     var body: some View {
         VStack {
@@ -25,7 +29,6 @@ extension DashView: View {
             .padding()
 /*
             GridStack(rows: 4, columns: 4) { row, col in
-                
                 if (row == 2 && col == 2) {
                     StatusButtonRed()
                 } else {
@@ -37,7 +40,7 @@ extension DashView: View {
                 ForEach(monitors, id: \.self) { monitor in
                     if monitor.status {
                         Button(action: {
-                            print("under construction")
+                            self.showingAlert1 = true
                         }) {
                             VStack {
                                 Text(monitor.hostname!)
@@ -52,10 +55,13 @@ extension DashView: View {
                              .foregroundColor(Color.white)
                         }
                         .cornerRadius(20)
-
+                        .alert(isPresented: $showingAlert1) {
+                        Alert(title: Text("Operation Detail"), message:
+                                Text("Success: Resource returns 200...2xx status"), dismissButton: .default(Text("Cancel")))
+                        }
                     } else {
                         Button(action: {
-                            print("under construction")
+                            self.showingAlert2 = true
                         }) {
                             VStack {
                                 Text(monitor.hostname!)                                  .padding(.top)
@@ -69,15 +75,17 @@ extension DashView: View {
                              .foregroundColor(Color.white)
                         }
                         .cornerRadius(20)
-
+                        .alert(isPresented: $showingAlert2) {
+                        Alert(title: Text("Operation Detail"), message:
+                                Text("Failure: Resource unavailable or not returning 200...2xx"), dismissButton: .default(Text("Cancel")))
+                        }
                     }
-
                 }
             }
             .padding(.bottom)
             
             Button(action: {
-                print("Hello")
+                Runner(monitors: monitors, viewContext: viewContext).run()
             }) {
                 Text("Refresh")
             }
