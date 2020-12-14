@@ -22,6 +22,7 @@ struct PersistenceController {
             newMonitor.port = "8080"
             newMonitor.path = "wordpress"
             newMonitor.task = "http2xx"
+            newMonitor.status = Status.yellow.rawValue
         }
         do {
             try viewContext.save()

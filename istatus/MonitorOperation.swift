@@ -23,7 +23,7 @@ final class MonitorOperation: AsyncOperation {
     }
 
     private func updateMonitorGreen(monitor: Monitor, statusMsg: String) {
-        let newStatus = true
+        let newStatus = Status.green.rawValue //true
         viewContext.performAndWait {
             monitor.status = newStatus
             monitor.statusmsg = statusMsg
@@ -32,7 +32,7 @@ final class MonitorOperation: AsyncOperation {
     }
 
     private func updateMonitorRed(monitor: Monitor, statusMsg: String) {
-        let newStatus = false
+        let newStatus = Status.red.rawValue //false
         viewContext.performAndWait {
             monitor.status = newStatus
             monitor.statusmsg = statusMsg

@@ -14,18 +14,26 @@ struct MonitorDetailView {
 
 extension MonitorDetailView {
 
-    private func updateMonitorGreen(monitor: Monitor) {
-        let newStatus = true
+    private func updateMonitorYellow(monitor: Monitor) {
+        let newStatus = Status.yellow //true
         viewContext.performAndWait {
-            monitor.status = newStatus
+            monitor.status = newStatus.rawValue
+            try? viewContext.save()
+        }
+    }
+
+    private func updateMonitorGreen(monitor: Monitor) {
+        let newStatus = Status.green //true
+        viewContext.performAndWait {
+            monitor.status = newStatus.rawValue
             try? viewContext.save()
         }
     }
 
     private func updateMonitorRed(monitor: Monitor) {
-        let newStatus = false
+        let newStatus = Status.red //false
         viewContext.performAndWait {
-            monitor.status = newStatus
+            monitor.status = newStatus.rawValue
             try? viewContext.save()
         }
     }
@@ -78,7 +86,7 @@ extension MonitorDetailView: View {
 
             HStack {
                 LabelTextDisplay(value: "Status")
-                DetailTextDisplay(value: monitor.status.description)
+                DetailTextDisplay(value: monitor.status!)
                 Spacer()
             }
             .padding(.horizontal)
@@ -91,6 +99,10 @@ extension MonitorDetailView: View {
             .padding(.horizontal)
 
             HStack {
+                Button("Set Yellow") {
+                    updateMonitorYellow(monitor: monitor)
+                }
+                .padding()
                 Button("Set Green") {
                     updateMonitorGreen(monitor: monitor)
                 }
