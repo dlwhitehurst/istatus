@@ -39,8 +39,13 @@ extension DashView: View {
             // Alignment spacer
             Spacer()
         }
+        .onAppear(perform: runMonitors)
     }
 
+    private func runMonitors() {
+        Runner(monitors: monitors, viewContext: viewContext).run()
+    }
+    
     private func generateContent(in g: GeometryProxy) -> some View {
         var width = CGFloat.zero
         var height = CGFloat.zero

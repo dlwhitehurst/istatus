@@ -19,7 +19,21 @@ final class Runner {
         self.viewContext = viewContext
     }
 
+    private func updateMonitorYellow(monitor: Monitor) {
+        let newStatus = Status.yellow //true
+        viewContext.performAndWait {
+            monitor.status = newStatus.rawValue
+            try? viewContext.save()
+        }
+    }
+
     func run() {
+        // all to yellow first
+        for monitor in monitors {
+            updateMonitorYellow(monitor: monitor)
+        }
+        
+        // now thread each network call
         for monitor in monitors {
             MonitorOperation(monitor: monitor, viewContext: viewContext).start()
         }
