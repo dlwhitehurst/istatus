@@ -75,10 +75,15 @@ extension DashView: View {
     }
     
     func getColor(monitor: Monitor) -> Color {
-        if (monitor.status) {
-            return Color.green
-        } else {
-            return Color.red
+        switch monitor.status {
+        case Status.yellow.rawValue:
+                return Color.yellow
+            case Status.green.rawValue:
+                return Color.green
+            case Status.red.rawValue:
+                return Color.red
+            default:
+                return Color.gray
         }
     }
     

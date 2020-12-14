@@ -29,6 +29,7 @@
 		D1570A16258497A800D80966 /* AsynchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1570A15258497A800D80966 /* AsynchOperation.swift */; };
 		D1570A19258498EE00D80966 /* MonitorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1570A18258498EE00D80966 /* MonitorOperation.swift */; };
 		D1570A222585B12C00D80966 /* RunnerOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1570A212585B12C00D80966 /* RunnerOperation.swift */; };
+		D1570A7A25880E8100D80966 /* misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1570A7925880E8100D80966 /* misc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		D1570A15258497A800D80966 /* AsynchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchOperation.swift; sourceTree = "<group>"; };
 		D1570A18258498EE00D80966 /* MonitorOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorOperation.swift; sourceTree = "<group>"; };
 		D1570A212585B12C00D80966 /* RunnerOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerOperation.swift; sourceTree = "<group>"; };
+		D1570A7925880E8100D80966 /* misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = misc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				D1570A15258497A800D80966 /* AsynchOperation.swift */,
 				D1570A18258498EE00D80966 /* MonitorOperation.swift */,
 				D1570A212585B12C00D80966 /* RunnerOperation.swift */,
+				D1570A7925880E8100D80966 /* misc.swift */,
 			);
 			path = istatus;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				764935B225784A13002360CA /* TextEntryModifier.swift in Sources */,
 				765351CE2579A26A009255B2 /* istatus.xcdatamodeld in Sources */,
 				D10270A0257DBD970049F90C /* StatusButtonRed.swift in Sources */,
+				D1570A7A25880E8100D80966 /* misc.swift in Sources */,
 				764935AF25784861002360CA /* MonitorCreateViewSupport.swift in Sources */,
 				76493597257839CE002360CA /* ContentView.swift in Sources */,
 				D1570A16258497A800D80966 /* AsynchOperation.swift in Sources */,

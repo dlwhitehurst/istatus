@@ -32,7 +32,7 @@ extension MonitorCreateView {
         monitor.path = support.path
         monitor.task = tasks[selectedTask]
         monitor.url = build()
-        monitor.status = false
+        monitor.status = Status.yellow.rawValue
 
         // save
         do {
